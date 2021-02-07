@@ -1,6 +1,6 @@
 FROM fedora-minimal
 
-RUN microdnf install -y tar gzip && \
+RUN microdnf install -y tar gzip bzip2 && \
     microdnf clean all
 
 RUN mkdir /opt/helm
@@ -11,6 +11,12 @@ RUN cd /opt/helm && \
 
 RUN mkdir /opt/openshift
 ADD ./oc /opt/openshift/oc
+
+RUN mkdir /opt/template2helm
+RUN cd /opt/template2helm && \
+    curl -L -O https://github.com/redhat-cop/template2helm/releases/download/v0.1.0/linux-amd64-template2helm.bz2 && \
+    bunzip2 linux-amd64-template2helm.bz2 && \
+    chmod a+x linux-amd64-template2helm
 
 
 ADD ./launcher.sh /launcher.sh

@@ -12,7 +12,12 @@ case $1 in
     /opt/helm/helm "${@:2}"
     ;;
 
-  *)
-    echo "$1 is not a supported command"
+  template2helm)
+    /opt/template2helm/linux-amd64-template2helm  "${@:2}"
+    ;;
+
+  help | *)
+    echo "\"$1\" is not a supported command."
+    echo "Available commands are: oc, helm, template2helm"
     ;;
 esac
