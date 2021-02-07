@@ -1,0 +1,3 @@
+alias helm='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z launcher helm'
+alias oc='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z launcher oc'
+alias template2helm='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z launcher template2helm'

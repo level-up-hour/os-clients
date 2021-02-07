@@ -9,7 +9,7 @@ case $1 in
     ;;
 
   helm)
-    /opt/helm/helm "${@:2}"
+    /opt/helm/helm-linux-amd64 "${@:2}"
     ;;
 
   template2helm)
@@ -17,7 +17,10 @@ case $1 in
     ;;
 
   help | *)
-    echo "\"$1\" is not a supported command."
+    if [ $1 != "help" ]; then
+      echo "\"$1\" is not a supported command."
+    fi
     echo "Available commands are: oc, helm, template2helm"
     ;;
+
 esac
