@@ -1,4 +1,4 @@
-FROM ubi8-minimal
+FROM registry.access.redhat.com/ubi8-minimal
 
 RUN microdnf install -y tar gzip bzip2 && \
     microdnf clean all
