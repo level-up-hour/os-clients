@@ -21,6 +21,12 @@ RUN mkdir /opt/template2helm && \
     bunzip2 linux-amd64-template2helm.bz2 && \
     chmod a+x linux-amd64-template2helm
 
+RUN mkdir /opt/odo && \
+    cd /opt/odo && \
+    curl -L -O https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/odo/latest/odo-linux-amd64.tar.gz && \
+    tar -xf odo-linux-amd64.tar.gz && \
+    rm odo-linux-amd64.tar.gz
+
 ADD ./launcher.sh /launcher.sh
 RUN chmod a+x /launcher.sh
 
