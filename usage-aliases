@@ -1,3 +1,4 @@
-alias helm='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z launcher helm'
-alias oc='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z launcher oc'
-alias template2helm='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z launcher template2helm'
+alias helm='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z os-clients helm'
+alias oc='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z os-clients oc'
+alias template2helm='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z os-clients template2helm'
+alias odo='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z os-clients odo'
