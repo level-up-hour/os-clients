@@ -5,7 +5,7 @@ RUN microdnf install -y tar gzip bzip2 && \
 
 RUN mkdir /opt/helm && \
     cd /opt/helm && \
-    curl -L -O https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/helm/latest-deprecated/helm-linux-amd64.tar.gz && \
+    curl -L -O https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/helm/latest/helm-linux-amd64.tar.gz && \
     tar -xf helm-linux-amd64.tar.gz && \
     rm helm-linux-amd64.tar.gz
 
