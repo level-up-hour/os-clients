@@ -2,3 +2,4 @@ alias helm='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z os-c
 alias oc='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z os-clients oc'
 alias template2helm='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z os-clients template2helm'
 alias odo='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z os-clients odo'
+alias kubectl='podman run --rm -it -v ~/.kube:/root/.kube:z -v $PWD:/workdir:z os-clients kubectl'
