@@ -1,6 +1,9 @@
 FROM registry.access.redhat.com/ubi8-minimal
 
-RUN microdnf install -y tar gzip bzip2 && \
+# first row tools needed in container
+# second row for undeclared deps of tools -- rsync reqd for oc rsync cmd
+RUN microdnf install -y tar gzip bzip2 \ 
+    rsync && \ 
     microdnf clean all
 
 RUN mkdir /opt/helm && \
