@@ -11,14 +11,6 @@ case $1 in
     /opt/openshift/kubectl "${@:2}"
     ;;
 
-  helm)
-    /opt/helm/helm-linux-amd64 "${@:2}"
-    ;;
-
-  template2helm)
-    /opt/template2helm/linux-amd64-template2helm  "${@:2}"
-    ;;
-
   odo)
     /opt/odo/odo "${@:2}"
     ;;
@@ -27,7 +19,7 @@ case $1 in
     if [ $1 != "help" ]; then
       echo "\"$1\" is not a supported command."
     fi
-    echo "Available commands are: oc, helm, template2helm, odo, kubectl"
+    echo "Available commands are: oc, odo, kubectl"
     ;;
 
 esac
