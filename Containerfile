@@ -2,27 +2,15 @@ FROM registry.access.redhat.com/ubi8-minimal
 
 # first row tools needed in container
 # second row for undeclared deps of tools -- rsync reqd for oc rsync cmd
-RUN microdnf install -y tar gzip bzip2 \ 
+RUN microdnf install -y tar gzip \ 
     rsync && \ 
     microdnf clean all
 
-RUN mkdir /opt/helm && \
-    cd /opt/helm && \
-    curl -L -O https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/helm/latest/helm-linux-amd64.tar.gz && \
-    tar -xf helm-linux-amd64.tar.gz && \
-    rm helm-linux-amd64.tar.gz
-
 RUN mkdir /opt/openshift && \
     cd /opt/openshift && \
-    curl -L -O https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/oc/latest/linux/oc.tar.gz && \
+    curl -L -O https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/oc/4.4/linux/oc.tar.gz && \
     tar -xf oc.tar.gz && \
     rm oc.tar.gz
-
-RUN mkdir /opt/template2helm && \
-    cd /opt/template2helm && \
-    curl -L -O https://github.com/redhat-cop/template2helm/releases/download/v0.1.0/linux-amd64-template2helm.bz2 && \
-    bunzip2 linux-amd64-template2helm.bz2 && \
-    chmod a+x linux-amd64-template2helm
 
 RUN mkdir /opt/odo && \
     cd /opt/odo && \
