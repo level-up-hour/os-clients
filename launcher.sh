@@ -23,11 +23,15 @@ case $1 in
     /opt/odo/odo "${@:2}"
     ;;
 
+  argocd)
+    /opt/argocd/argocd "${@:2}"
+    ;;
+
   help | *)
     if [ $1 != "help" ]; then
       echo "\"$1\" is not a supported command."
     fi
-    echo "Available commands are: oc, helm, template2helm, odo, kubectl"
+    echo "Available commands are: oc, helm, template2helm, odo, kubectl, argocd"
     ;;
 
 esac
