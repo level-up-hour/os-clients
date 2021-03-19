@@ -30,6 +30,12 @@ RUN mkdir /opt/odo && \
     tar -xf odo-linux-amd64.tar.gz && \
     rm odo-linux-amd64.tar.gz
 
+RUN mkdir /opt/argocd && \
+    cd /opt/argocd && \
+    ver=$(curl --silent "https://api.github.com/repos/argoproj/argo-cd/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/') && \
+    curl -sSL -o /opt/argocd/argocd https://github.com/argoproj/argo-cd/releases/download/$VERSION/argocd-linux-amd64 && \
+    chmod +x /opt/argocd/argocd
+
 ADD ./launcher.sh /launcher.sh
 RUN chmod a+x /launcher.sh
 
