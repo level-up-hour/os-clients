@@ -1,6 +1,6 @@
 IMAGE_NAME := $(USER)/os-clients
 FNAME := Containerfile
-CLIENT_VERSION := latest
+CLIENT_VERSION := interactive-4.6 
 
 all: podman-build podman-test
 
