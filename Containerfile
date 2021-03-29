@@ -27,7 +27,7 @@ RUN mkdir /opt/template2helm && \
 RUN mkdir /opt/odo && \
     cd /opt/odo && \
     curl -L -O https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/odo/latest/odo-linux-amd64.tar.gz && \
-    tar -xf odo-linux-amd64.tar.gz && \
+    tar --no-same-owner -xf odo-linux-amd64.tar.gz && \
     rm odo-linux-amd64.tar.gz
 
 RUN mkdir /opt/argocd && \
