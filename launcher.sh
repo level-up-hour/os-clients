@@ -27,6 +27,10 @@ case $1 in
     /opt/argocd/argocd "${@:2}"
     ;;
 
+  s2i)
+    /opt/s2i/s2i "${@:2}"
+    ;;
+
   help | *)
     if [ $1 != "help" ]; then
       echo "\"$1\" is not a supported command."
